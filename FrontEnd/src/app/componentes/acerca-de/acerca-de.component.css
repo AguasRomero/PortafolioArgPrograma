@@ -1,0 +1,18 @@
+.div {
+    align-content: center;
+    }
+.nombre {
+    width:25%;
+    float: left;
+    text-align: center;
+}
+.tarjeta {
+    width:70%;
+    float: right;
+}
+.circular { 
+    border-top-left-radius: 50% 50%; border-top-right-radius: 50% 50%; border-bottom-right-radius: 50% 50%; border-bottom-left-radius: 50% 50%; 
+}
+.clearfix{
+    clear:both
+}
