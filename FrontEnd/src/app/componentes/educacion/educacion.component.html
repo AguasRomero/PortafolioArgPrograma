@@ -1,22 +1,14 @@
 <h1>Educacion</h1>
+<div *ngFor="let educacion of educacion">
 <mat-card>
     <mat-card-title-group>
-        <mat-card-title>Bioquimico</mat-card-title>
-        <mat-card-subtitle>Universidad Nacional de Mar del Plata</mat-card-subtitle>
-        <img mat-card-md-image src="https://www.mdp.edu.ar/templates/unmdp/img/logoUNMDP.svg">
+        <mat-card-title>{{educacion.titulo}}</mat-card-title>
+        <mat-card-subtitle>{{educacion.institucion}}</mat-card-subtitle>
+        <img mat-card-md-image src={{educacion.logo}}>
     </mat-card-title-group>
     <mat-card-content>
-        Ingreso: 2016
+        Ingreso: {{educacion.anoIngreso}}
     </mat-card-content>
 </mat-card>
 <br>
-<mat-card>
-    <mat-card-title-group>
-        <mat-card-title>Ingeniero en Informatica</mat-card-title>
-        <mat-card-subtitle>Universidad Nacional de Mar del Plata</mat-card-subtitle>
-        <img mat-card-md-image src="https://www.mdp.edu.ar/templates/unmdp/img/logoUNMDP.svg">
-    </mat-card-title-group>
-    <mat-card-content>
-        Ingreso: 2021
-    </mat-card-content>
-</mat-card>
+</div>

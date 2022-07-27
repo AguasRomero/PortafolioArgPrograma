@@ -11,5 +11,15 @@ export class ExperenciaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  experiencias = [
+    {puesto: "puesto A",
+    empresa: "empresa A",
+    anoIngreso: "2000"
+  },
+    {puesto: "puesto B",
+  empresa: "empresa B",
+  anoIngreso: "2005"
+  }
+  ]
 
 }

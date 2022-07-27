@@ -11,5 +11,15 @@ export class ProyectosComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  proyectos = [
+    {
+      proyecto: "Portafolio personal",
+      descripcion: "Esta misma pagina ;)"
+    },
+    {
+      proyecto: "Proyecto B",
+      descripcion: "etc."
+    }
+  ]
 
 }

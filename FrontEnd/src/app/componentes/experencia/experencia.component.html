@@ -1,12 +1,9 @@
 <h1>Experiencia</h1>
+<div *ngFor="let experiencia of experiencias">
 <mat-card>
-    <mat-card-title>Empresa 1</mat-card-title>
-    <mat-card-subtitle>Fecha inicio-Fecho final</mat-card-subtitle>
-    <mat-card-content>Descripción</mat-card-content>
+    <mat-card-title>{{experiencia.puesto}}</mat-card-title>
+    <mat-card-subtitle>{{experiencia.empresa}}</mat-card-subtitle>
+    <mat-card-content>{{experiencia.anoIngreso}}</mat-card-content>
 </mat-card>
 <br>
-<mat-card>
-    <mat-card-title>Empresa 2</mat-card-title>
-    <mat-card-subtitle>Fecha inicio-Fecho final</mat-card-subtitle>
-    <mat-card-content>Descripción</mat-card-content>
-</mat-card>
+</div>

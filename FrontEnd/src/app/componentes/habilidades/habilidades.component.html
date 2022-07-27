@@ -3,13 +3,9 @@
     <mat-card-title>Idiomas</mat-card-title>
     <mat-card-content>
         <div class="caja">
-            <div>
-                <p align = "center">Inglés</p>
-                <mat-progress-spinner mode="determinate" value="60"></mat-progress-spinner>
-            </div>
-            <div>
-                <p align = "center">Alemán</p>
-                <mat-progress-spinner mode="determinate" value="10"></mat-progress-spinner>
+            <div  *ngFor="let idioma of idiomas">
+                <p align = "center">{{idioma.idioma}}</p>
+                <mat-progress-spinner mode="determinate" value="{{idioma.porcentaje}}"></mat-progress-spinner>
             </div>
           </div>     
     </mat-card-content>

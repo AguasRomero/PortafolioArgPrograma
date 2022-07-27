@@ -12,4 +12,12 @@ export class EducacionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  educacion = [
+  {
+    titulo: "Bioquímico",
+    institucion: "Universidad de Mar del Plata",
+    logo: "https://www.mdp.edu.ar/templates/unmdp/img/logoUNMDP.svg",
+    anoIngreso: 2015
+  }
+  ]
 }

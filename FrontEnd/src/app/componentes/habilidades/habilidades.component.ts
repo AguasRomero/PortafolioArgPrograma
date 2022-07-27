@@ -12,4 +12,15 @@ export class HabilidadesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  idiomas = [
+    {
+    idioma: "Inglés",
+    porcentaje: 70
+  },
+  {
+    idioma: "Alemán",
+    porcentaje: 10
+  }
+]
+
 }
