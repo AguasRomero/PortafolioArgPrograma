@@ -1,14 +1,12 @@
+<h2>Usuario</h2>
 <mat-form-field appearance="fill">
     <mat-label>Usuario</mat-label>
     <input matInput>
 </mat-form-field>
-
+<h2>Contraseña</h2>
 <mat-form-field appearance="fill">
       <mat-label>Contraseña</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Esconder contraseña'" [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
 </mat-form-field>
-
+<br>
 <button mat-raised-button color="primary">Ingresar</button>

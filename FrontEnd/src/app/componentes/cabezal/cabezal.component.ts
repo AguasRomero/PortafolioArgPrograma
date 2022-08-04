@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MatDialog} from '@angular/material/dialog';
+import { AccesoComponent } from '../acceso/acceso.component';
 @Component({
   selector: 'app-cabezal',
   templateUrl: './cabezal.component.html',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabezalComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public dialog: MatDialog) { }
+  abrirLogin(): void {
+    this.dialog.open(AccesoComponent);
+  }
   ngOnInit(): void {
   }
 
