@@ -18,7 +18,7 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { AccesoComponent } from './componentes/acceso/acceso.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +42,7 @@ import { AccesoComponent } from './componentes/acceso/acceso.component';
     MatButtonModule,
     MatFormFieldModule,
     MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

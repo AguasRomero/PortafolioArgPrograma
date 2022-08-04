@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PerfilService } from 'src/app/servicios/perfil.service';
 
 @Component({
   selector: 'app-educacion',
@@ -6,18 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-
-  constructor() { }
+  educacion:any;
+  constructor(private datosPerfil:PerfilService) { }
 
   ngOnInit(): void {
+    this.datosPerfil.obtenerDatos().subscribe(data =>{
+      this.educacion=data.educacion;
+    })
   }
 
-  educacion = [
-  {
-    titulo: "Bioquímico",
-    institucion: "Universidad de Mar del Plata",
-    logo: "https://www.mdp.edu.ar/templates/unmdp/img/logoUNMDP.svg",
-    anoIngreso: 2015
-  }
-  ]
 }

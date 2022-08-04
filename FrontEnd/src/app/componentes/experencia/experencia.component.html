@@ -1,4 +1,7 @@
 <h1>Experiencia</h1>
+<div *ngIf="!experiencias || experiencias.data.length === 0">
+    <p>¡Sin experiencia!</p>
+    </div>
 <div *ngFor="let experiencia of experiencias">
 <mat-card>
     <mat-card-title>{{experiencia.puesto}}</mat-card-title>

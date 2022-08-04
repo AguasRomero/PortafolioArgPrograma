@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PerfilService } from 'src/app/servicios/perfil.service';
 
 @Component({
   selector: 'app-habilidades',
@@ -6,21 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-
-  constructor() { }
+  idiomas:any;
+  lenguajes:any;
+  constructor(private datosPerfil:PerfilService) { }
 
   ngOnInit(): void {
+    this.datosPerfil.obtenerDatos().subscribe(data =>{
+      this.idiomas=data.idiomas;
+      this.lenguajes=data.lenguajes
+    });
   }
-
-  idiomas = [
-    {
-    idioma: "Inglés",
-    porcentaje: 70
-  },
-  {
-    idioma: "Alemán",
-    porcentaje: 10
-  }
-]
-
 }

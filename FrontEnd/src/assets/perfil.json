@@ -1,0 +1,47 @@
+{
+    "nombreCompleto": "Agustín Alejandro Romero",
+    "fotoPerfil": "",
+    "fotoFondo": "",
+    "acercaDe": "Un estudiante curioso que aunque esta mas inclinado por las ciencias naturales, admira la computacion.",
+    "educacion": [
+        {
+            "institucion": "Universidad de Mar del Plata",
+            "logo": "https://www.mdp.edu.ar/templates/unmdp/img/logoUNMDP.svg",
+            "titulo": "Bioquimico",
+            "anoIngreso": 2015}
+    ],
+    "proyectos": [
+        {
+            "nombre": "Portafolio Web personal",
+            "descripcion": "La pagina que estas viendo ahora"
+        }
+    ],
+    "idiomas": [
+        {   "idioma": "Inglés",
+            "porcentaje": 75
+        },
+        {   "idioma": "Alemán",
+            "porcentaje": 10}
+    ],
+    "lenguajes": [
+        {
+            "lenguaje": "Http/CSS",
+            "porcentaje": 40
+        },
+        {
+            "lenguaje": "R",
+            "porcentaje": 40
+        },
+        {
+            "lenguaje": "Java",
+            "porcentaje": 20
+        },
+        {
+            "lenguaje": "Latex",
+            "porcentaje": 50
+        }
+    ],
+    "experiencias": [
+
+    ]
+}
