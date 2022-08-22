@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { perfil } from 'src/app/modelo/perfil.model';
 import { PerfilService } from 'src/app/servicios/perfil.service';
 
 @Component({
@@ -7,13 +8,10 @@ import { PerfilService } from 'src/app/servicios/perfil.service';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  datos:any;
-  constructor(private datosPerfil:PerfilService) { }
-
+  perfil: perfil = new perfil("","","","");
+  
+  constructor(public perfilService: PerfilService) { }
   ngOnInit(): void {
-    this.datosPerfil.obtenerDatos().subscribe(data =>{
-      this.datos=data;
-    })
+      this.perfilService.getPerfil().subscribe(datos => {this.perfil = datos})
   }
-
 }
