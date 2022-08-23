@@ -12,18 +12,12 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Volcando estructura de base de datos para portafoliodb
 CREATE DATABASE IF NOT EXISTS `portafoliodb` /*!40100 DEFAULT CHARACTER SET utf8mb3 */;
 USE `portafoliodb`;
 
-CREATE TABLE IF NOT EXISTS `perfil` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` char(50) DEFAULT '0',
-  `fotoPerfil` char(50) DEFAULT '0',
-  `fotoFondo` char(50) DEFAULT '0',
-  `acercaDe` char(50) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
+-- Volcando estructura para tabla portafoliodb.acceso
 CREATE TABLE IF NOT EXISTS `acceso` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` char(50) NOT NULL DEFAULT '',
@@ -31,16 +25,34 @@ CREATE TABLE IF NOT EXISTS `acceso` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla portafoliodb.perfil
+CREATE TABLE IF NOT EXISTS `perfil` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` char(50) DEFAULT '0',
+  `fotoPerfil` char(50) DEFAULT '0',
+  `fotoFondo` char(50) DEFAULT '0',
+  `acercaDe` char(50) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla portafoliodb.educacion
 CREATE TABLE IF NOT EXISTS `educacion` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Institucion` char(50) DEFAULT NULL,
-  `Titulo` char(50) DEFAULT NULL,
+  `institucion` char(50) DEFAULT NULL,
+  `titulo` char(50) DEFAULT NULL,
   `anoIngreso` year(4) DEFAULT NULL,
   `anoEgreso` year(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `educacion_FK` FOREIGN KEY (`id`) REFERENCES `perfil` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla portafoliodb.experiencia
 CREATE TABLE IF NOT EXISTS `experiencia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `empresa` char(50) DEFAULT NULL,
@@ -51,6 +63,21 @@ CREATE TABLE IF NOT EXISTS `experiencia` (
   CONSTRAINT `experiencia_FK` FOREIGN KEY (`id`) REFERENCES `perfil` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla portafoliodb.habilidades
+CREATE TABLE IF NOT EXISTS `habilidades` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `habilidad` char(50) DEFAULT NULL,
+  `porcentaje` tinyint(4) DEFAULT NULL,
+  `IoL` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `habilidades_FK` FOREIGN KEY (`id`) REFERENCES `perfil` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla portafoliodb.proyectos
 CREATE TABLE IF NOT EXISTS `proyectos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `proyecto` char(50) DEFAULT '0',
@@ -60,6 +87,8 @@ CREATE TABLE IF NOT EXISTS `proyectos` (
   PRIMARY KEY (`id`),
   CONSTRAINT `proyectos_FK` FOREIGN KEY (`id`) REFERENCES `perfil` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- La exportación de datos fue deseleccionada.
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
