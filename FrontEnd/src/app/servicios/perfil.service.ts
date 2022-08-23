@@ -12,7 +12,7 @@ export class PerfilService {
   constructor(private http:HttpClient) { }
 
   public getPerfil(): Observable<perfil> {
-    return this.http.get<perfil>(this.URL+'traer');
+    return this.http.get<perfil>(this.URL+'obtener/1');
   }
 
   obtenerDatos(): Observable<any> {

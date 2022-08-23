@@ -34,7 +34,8 @@ CREATE TABLE IF NOT EXISTS `perfil` (
   `fotoPerfil` char(50) DEFAULT '0',
   `fotoFondo` char(50) DEFAULT '0',
   `acercaDe` char(50) DEFAULT '0',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `perfil_FK` FOREIGN KEY (`id`) REFERENCES `acceso` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
 -- La exportación de datos fue deseleccionada.
