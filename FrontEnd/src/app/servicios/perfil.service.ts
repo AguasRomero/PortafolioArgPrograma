@@ -15,7 +15,7 @@ export class PerfilService {
     return this.http.get<perfil>(this.URL+'obtener/1');
   }
 
-  obtenerDatos(): Observable<any> {
+  public obtenerDatos(): Observable<any> {
     return this.http.get("./assets/perfil.json");
   }
 }
