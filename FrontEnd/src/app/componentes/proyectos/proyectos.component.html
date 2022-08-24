@@ -1,4 +1,5 @@
 <h1>Proyectos</h1>
+<p *ngIf="!proyectos?.length">¡Ningun proyecto!</p>
 <div *ngFor="let proyecto of proyectos">
 <mat-card>
     <mat-card-title>{{proyecto.nombre}}</mat-card-title>

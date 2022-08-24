@@ -3,6 +3,7 @@
     <mat-card-title>Idiomas</mat-card-title>
     <mat-card-content>
         <div class="caja">
+            <p *ngIf="!idiomas?.length">Solo el idioma nativo</p>
             <div  *ngFor="let idioma of idiomas">
                 <p align = "center">{{idioma.idioma}}</p>
                 <mat-progress-spinner mode="determinate" value="{{idioma.porcentaje}}"></mat-progress-spinner>
@@ -14,6 +15,7 @@
     <mat-card-title>Lenguajes</mat-card-title>
     <mat-card-content>
         <div class="caja">
+            <p *ngIf="!lenguajes?.length">Ningun lenguaje</p>
             <div  *ngFor="let lenguaje of lenguajes">
                 <p align = "center">{{lenguaje.lenguaje}}</p>
                 <mat-progress-spinner mode="determinate" value="{{lenguaje.porcentaje}}"></mat-progress-spinner>
