@@ -1,14 +1,17 @@
 package com.agustin.portafolio.Service;
 
+import com.agustin.portafolio.Interface.IHabilidadesService;
 import com.agustin.portafolio.Model.Habilidades;
 import com.agustin.portafolio.Repository.HabilidadesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class HabilidadesService implements IHabilidadesService{
+@Transactional
+public class HabilidadesService implements IHabilidadesService {
     @Autowired
     private HabilidadesRepository habilidadesRepository;
     @Override
@@ -24,5 +27,9 @@ public class HabilidadesService implements IHabilidadesService{
     public Habilidades findHabilidades(Long id){
         Habilidades habilidades = habilidadesRepository.findById(id).orElse(null);
         return habilidades;
+    }
+    @Override
+    public boolean existsHabilidades(Long id) {
+        return habilidadesRepository.existsById(id);
     }
 }

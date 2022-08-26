@@ -1,13 +1,11 @@
 package com.agustin.portafolio.Controller;
 
 import com.agustin.portafolio.Model.Perfil;
-import com.agustin.portafolio.Service.IPerfilService;
+import com.agustin.portafolio.Interface.IPerfilService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/perfil")
@@ -30,6 +28,7 @@ public class PerfilController {
     }
     @DeleteMapping ("/borrar/{id}")
     public String deletePerfil (@PathVariable Long id){
+        if(!interPerfil.existsPerfil(id)) return "No existe ese perfil";
         interPerfil.deletePerfil(id);
         return "Perfil borrado";
     }

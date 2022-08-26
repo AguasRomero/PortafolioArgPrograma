@@ -1,4 +1,4 @@
-package com.agustin.portafolio.Service;
+package com.agustin.portafolio.Interface;
 
 import com.agustin.portafolio.Model.Perfil;
 import com.agustin.portafolio.Model.Proyectos;
@@ -10,4 +10,5 @@ public interface IProyectosService {
     public void saveProyectos (Proyectos proyectos);
     public void deleteProyectos (Long id);
     public Proyectos findProyectos (Long id);
+    public boolean existsProyectos (Long id);
 }

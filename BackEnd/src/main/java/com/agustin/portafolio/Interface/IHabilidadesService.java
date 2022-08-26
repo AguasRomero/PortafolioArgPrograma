@@ -1,4 +1,4 @@
-package com.agustin.portafolio.Service;
+package com.agustin.portafolio.Interface;
 
 import com.agustin.portafolio.Model.Habilidades;
 
@@ -9,4 +9,5 @@ public interface IHabilidadesService {
     public void saveHabilidades (Habilidades habilidades);
     public void deleteHabilidades (Long id);
     public Habilidades findHabilidades (Long id);
+    public boolean existsHabilidades (Long id);
 }

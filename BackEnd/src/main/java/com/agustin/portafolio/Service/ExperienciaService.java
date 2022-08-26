@@ -1,14 +1,17 @@
 package com.agustin.portafolio.Service;
 
+import com.agustin.portafolio.Interface.IExperienciaService;
 import com.agustin.portafolio.Model.Experiencia;
 import com.agustin.portafolio.Repository.ExperienciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class ExperienciaService implements IExperienciaService{
+@Transactional
+public class ExperienciaService implements IExperienciaService {
     @Autowired
     private ExperienciaRepository experienciaRepository;
     @Override
@@ -25,5 +28,9 @@ public class ExperienciaService implements IExperienciaService{
     public Experiencia findExperiencia(Long id){
         Experiencia experiencia = experienciaRepository.findById(id).orElse(null);
         return experiencia;
+    }
+    @Override
+    public boolean existsExperiencia(Long id) {
+        return experienciaRepository.existsById(id);
     }
 }

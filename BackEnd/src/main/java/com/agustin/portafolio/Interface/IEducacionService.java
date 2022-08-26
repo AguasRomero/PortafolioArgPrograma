@@ -1,4 +1,4 @@
-package com.agustin.portafolio.Service;
+package com.agustin.portafolio.Interface;
 
 import com.agustin.portafolio.Model.Educacion;
 
@@ -9,4 +9,5 @@ public interface IEducacionService {
     public void saveEducacion (Educacion educacion);
     public void deleteEducacion (Long id);
     public Educacion findEducacion (Long id);
+    public boolean existsEducacion (Long id);
 }

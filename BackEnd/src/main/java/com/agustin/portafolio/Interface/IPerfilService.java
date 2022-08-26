@@ -1,4 +1,4 @@
-package com.agustin.portafolio.Service;
+package com.agustin.portafolio.Interface;
 
 import com.agustin.portafolio.Model.Perfil;
 
@@ -9,4 +9,5 @@ public interface IPerfilService {
     public void savePerfil (Perfil perfil);
     public void deletePerfil (Long id);
     public Perfil findPerfil (Long id);
+    public boolean existsPerfil (Long id);
 }
