@@ -25,7 +25,7 @@ public class EducacionController {
     @DeleteMapping("/borrar/{id}")
     public String deleteEducacion (@PathVariable Long id){
         if(!interEducacion.existsEducacion(id)) return "No existe esa educacion";
-        interEducacion.deleteEducacion(id);
+        else interEducacion.deleteEducacion(id);
         return "Educacion borrado";
     }
 }

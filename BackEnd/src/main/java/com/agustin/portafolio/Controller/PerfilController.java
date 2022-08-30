@@ -17,24 +17,24 @@ public class PerfilController {
     public List<Perfil> getPerfil() {
         return interPerfil.getPerfil();
     }
-    @RequestMapping("/obtener/{id}")
-    public Perfil findPerfil(@PathVariable Long id){
-        return interPerfil.findPerfil(id);
+    @RequestMapping("/obtener/{idPerfil}")
+    public Perfil findPerfil(@PathVariable Long idPerfil){
+        return interPerfil.findPerfil(idPerfil);
     }
     @PostMapping ("/crear")
     public String createPerfil(@RequestBody Perfil perfil) {
         interPerfil.savePerfil(perfil);
         return "Perfil creado";
     }
-    @DeleteMapping ("/borrar/{id}")
-    public String deletePerfil (@PathVariable Long id){
-        if(!interPerfil.existsPerfil(id)) return "No existe ese perfil";
-        interPerfil.deletePerfil(id);
+    @DeleteMapping ("/borrar/{idPerfil}")
+    public String deletePerfil (@PathVariable Long idPerfil){
+        if(!interPerfil.existsPerfil(idPerfil)) return "No existe ese perfil";
+        interPerfil.deletePerfil(idPerfil);
         return "Perfil borrado";
     }
-    @PutMapping ("/editar/{id}")
-    public Perfil editPerfil (@PathVariable Long id, @RequestParam ("nombre") String nuevoNombre) {
-        Perfil perfil = interPerfil.findPerfil(id);
+    @PutMapping ("/editar/{idPerfil}/nombre")
+    public Perfil editPerfil (@PathVariable Long idPerfil, @RequestParam ("nombre") String nuevoNombre) {
+        Perfil perfil = interPerfil.findPerfil(idPerfil);
         perfil.setNombre(nuevoNombre);
         interPerfil.savePerfil(perfil);
         return perfil;

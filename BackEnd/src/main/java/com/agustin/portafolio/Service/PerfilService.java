@@ -24,16 +24,16 @@ public class PerfilService implements IPerfilService {
         perfilRepository.save(perfil);
     }
     @Override
-    public void deletePerfil(Long id){
-        perfilRepository.deleteById(id);
+    public void deletePerfil(Long idPerfil){
+        perfilRepository.deleteById(idPerfil);
     }
     @Override
-    public Perfil findPerfil(Long id){
-        Perfil perfil = perfilRepository.findById(id).orElse(null);
+    public Perfil findPerfil(Long idPerfil){
+        Perfil perfil = perfilRepository.findById(idPerfil).orElse(null);
         return perfil;
     }
     @Override
-    public boolean existsPerfil(Long id) {
-        return perfilRepository.existsById(id);
+    public boolean existsPerfil(Long idPerfil) {
+        return perfilRepository.existsById(idPerfil);
     }
 }
