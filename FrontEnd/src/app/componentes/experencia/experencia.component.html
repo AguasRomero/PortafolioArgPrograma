@@ -2,9 +2,14 @@
 <p *ngIf="!experiencias?.length">¡Sin experiencia!</p>
 <div *ngFor="let experiencia of experiencias">
 <mat-card>
-    <mat-card-title>{{experiencia.puesto}}</mat-card-title>
-    <mat-card-subtitle>{{experiencia.empresa}}</mat-card-subtitle>
-    <mat-card-content>{{experiencia.anoIngreso}}</mat-card-content>
+    <mat-card-title-group>
+        <mat-card-title>{{experiencia.puesto}}</mat-card-title>
+        <mat-card-subtitle>{{experiencia.empresa}}</mat-card-subtitle>
+        <img mat-card-md-image src={{experiencia.logoEmpresa}}>
+    </mat-card-title-group>
+    <mat-card-content>
+        Ingreso: {{experiencia.anoIngreso}}
+    </mat-card-content>
 </mat-card>
 <br>
 </div>

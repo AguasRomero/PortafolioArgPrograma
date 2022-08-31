@@ -2,8 +2,14 @@
 <p *ngIf="!proyectos?.length">¡Ningun proyecto!</p>
 <div *ngFor="let proyecto of proyectos">
 <mat-card>
-    <mat-card-title>{{proyecto.nombre}}</mat-card-title>
-    <mat-card-content>{{proyecto.descripcion}}</mat-card-content>
+    <mat-card-title-group>
+        <mat-card-title>{{proyecto.proyecto}}</mat-card-title>
+        <mat-card-subtitle>{{proyecto.anoCreacion}}</mat-card-subtitle>
+        <img mat-card-md-image src={{proyecto.fotoProyecto}}>
+    </mat-card-title-group>
+    <mat-card-content>
+        {{proyecto.descripcion}}
+    </mat-card-content>
 </mat-card>
 <br>
 </div>
