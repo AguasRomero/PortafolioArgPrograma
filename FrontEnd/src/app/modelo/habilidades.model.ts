@@ -2,13 +2,13 @@ export class habilidades {
     id?: number;
     habilidad: string;
     porcentaje: number;
-    IoL: boolean;
+    ioL: boolean;
 
     constructor(habilidad: string,
         porcentaje: number,
-        IoL: boolean,){
+        ioL: boolean,){
             this.habilidad = habilidad;
             this.porcentaje = porcentaje;
-            this.IoL = IoL;
+            this.ioL = ioL;
         }
 }

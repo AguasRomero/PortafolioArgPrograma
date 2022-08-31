@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PerfilService } from 'src/app/servicios/perfil.service';
+import { habilidades } from 'src/app/modelo/habilidades.model';
+import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 
 @Component({
   selector: 'app-habilidades',
@@ -7,14 +8,13 @@ import { PerfilService } from 'src/app/servicios/perfil.service';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-  idiomas:any;
-  lenguajes:any;
-  constructor(private datosPerfil:PerfilService) { }
+  habilidades: habilidades[] = [];
+
+  constructor(private habilidadesService:HabilidadesService) { }
 
   ngOnInit(): void {
-    this.datosPerfil.obtenerDatos().subscribe(data =>{
-      this.idiomas=data.idiomas;
-      this.lenguajes=data.lenguajes
+    this.habilidadesService.todosHabilidades().subscribe(data =>{
+      this.habilidades=data;
     });
   }
 }

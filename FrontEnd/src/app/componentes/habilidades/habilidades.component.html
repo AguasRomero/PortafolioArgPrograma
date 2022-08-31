@@ -3,23 +3,25 @@
     <mat-card-title>Idiomas</mat-card-title>
     <mat-card-content>
         <div class="caja">
-            <p *ngIf="!idiomas?.length">Solo el idioma nativo</p>
-            <div  *ngFor="let idioma of idiomas">
-                <p align = "center">{{idioma.idioma}}</p>
-                <mat-progress-spinner mode="determinate" value="{{idioma.porcentaje}}"></mat-progress-spinner>
-            </div>
-          </div>     
+            <ng-container  *ngFor="let idioma of habilidades">
+                <div *ngIf="idioma.ioL">
+                    <p align = "center">{{idioma.habilidad}}</p>
+                    <mat-progress-spinner mode="determinate" value="{{idioma.porcentaje}}"></mat-progress-spinner>
+                </div>
+            </ng-container>
+        </div>     
     </mat-card-content>
 </mat-card>
 <mat-card>
     <mat-card-title>Lenguajes</mat-card-title>
     <mat-card-content>
         <div class="caja">
-            <p *ngIf="!lenguajes?.length">Ningun lenguaje</p>
-            <div  *ngFor="let lenguaje of lenguajes">
-                <p align = "center">{{lenguaje.lenguaje}}</p>
-                <mat-progress-spinner mode="determinate" value="{{lenguaje.porcentaje}}"></mat-progress-spinner>
-            </div>
-          </div>     
+            <ng-container  *ngFor="let lenguaje of habilidades">
+                <div *ngIf="!lenguaje.ioL">
+                    <p align = "center">{{lenguaje.habilidad}}</p>
+                    <mat-progress-spinner mode="determinate" value="{{lenguaje.porcentaje}}"></mat-progress-spinner>
+                </div>
+            </ng-container>
+        </div>     
     </mat-card-content>
 </mat-card>
