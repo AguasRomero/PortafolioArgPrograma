@@ -20,6 +20,10 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { AccesoComponent } from './componentes/acceso/acceso.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InterceptorProvider } from './servicios/interceptor-service';
+import { NuevaExperienciaComponent } from './componentes/experencia/nueva-experiencia.component';
+import { NuevaEducacionComponent } from './componentes/educacion/nueva-educacion.component';
+import { NuevaHabilidadComponent } from './componentes/habilidades/nueva-habilidad.component';
+import { NuevoProyectoComponent } from './componentes/proyectos/nuevo-proyecto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,11 @@ import { InterceptorProvider } from './servicios/interceptor-service';
     EducacionComponent,
     HabilidadesComponent,
     ProyectosComponent,
-    AccesoComponent
+    AccesoComponent,
+    NuevaExperienciaComponent,
+    NuevaEducacionComponent,
+    NuevaHabilidadComponent,
+    NuevoProyectoComponent
   ],
   imports: [
     BrowserModule,
