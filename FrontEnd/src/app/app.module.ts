@@ -19,6 +19,7 @@ import { HabilidadesComponent } from './componentes/habilidades/habilidades.comp
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { AccesoComponent } from './componentes/acceso/acceso.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InterceptorProvider } from './servicios/interceptor-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [InterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

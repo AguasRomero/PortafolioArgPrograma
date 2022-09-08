@@ -1,12 +1,11 @@
-<h2>Usuario</h2>
-<mat-form-field appearance="fill">
+<mat-form-field appearance="fill" (ngSubmit)="onLogin" novalidate>
+    <h2>Usuario</h2>
     <mat-label>Usuario</mat-label>
-    <input matInput>
-</mat-form-field>
-<h2>Contraseña</h2>
-<mat-form-field appearance="fill">
-      <mat-label>Contraseña</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
+    <input matInput id="usuario" [(ngModel)]="usuario" required="">
+    <br>
+    <h2>Contraseña</h2>
+    <mat-label>Contraseña</mat-label>
+    <input matInput id="contrasena" [type]="hide ? 'password' : 'text'" [(ngModel)]="contrasena" required="">
 </mat-form-field>
 <br>
 <button mat-raised-button color="primary">Ingresar</button>

@@ -1,4 +1,5 @@
 <h1>Proyectos</h1>
+<button mat-mini-fab *ngIf="isLogged"><mat-icon>add</mat-icon></button>
 <p *ngIf="!proyectos?.length">¡Ningun proyecto!</p>
 <div *ngFor="let proyecto of proyectos">
 <mat-card>

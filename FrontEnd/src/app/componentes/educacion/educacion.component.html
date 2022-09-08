@@ -1,4 +1,5 @@
 <h1>Educacion</h1>
+<button mat-mini-fab *ngIf="isLogged"><mat-icon>add</mat-icon></button>
 <p *ngIf="!educacion?.length">¡Sin estudios!</p>
 <div *ngFor="let educacion of educacion">
 <mat-card>
