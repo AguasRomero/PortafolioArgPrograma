@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CabezalComponent } from './componentes/cabezal/cabezal.component';
@@ -53,6 +54,7 @@ import { NuevoProyectoComponent } from './componentes/proyectos/nuevo-proyecto.c
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
+    MatSlideToggleModule,
     HttpClientModule
   ],
   providers: [InterceptorProvider],

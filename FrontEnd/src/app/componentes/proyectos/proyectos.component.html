@@ -1,5 +1,7 @@
-<h1>Proyectos</h1>
-<button mat-mini-fab *ngIf="isLogged"><mat-icon>add</mat-icon></button>
+<div class="container">
+    <h1>Proyectos</h1>
+    <button mat-mini-fab *ngIf="isLogged" (click)="agregarProyecto()"><mat-icon>add</mat-icon></button>
+</div>
 <p *ngIf="!proyectos?.length">¡Ningun proyecto!</p>
 <div *ngFor="let proyecto of proyectos">
 <mat-card>
@@ -11,6 +13,10 @@
     <mat-card-content>
         {{proyecto.descripcion}}
     </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-icon-button *ngIf="isLogged"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button *ngIf="isLogged" (click)="borrarProyecto()"><mat-icon>delete</mat-icon></button>
+    </mat-card-actions>
 </mat-card>
 <br>
 </div>

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
 import { habilidades } from 'src/app/modelo/habilidades.model';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import { NuevaHabilidadComponent } from './nueva-habilidad.component';
 
 @Component({
   selector: 'app-habilidades',
@@ -11,9 +13,20 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class HabilidadesComponent implements OnInit {
   habilidades: habilidades[] = [];
 
-  constructor(private habilidadesService:HabilidadesService, private tokenService: TokenService) { }
+  constructor(public dialog: MatDialog, private habilidadesService:HabilidadesService, private tokenService: TokenService) { }
 
   isLogged = false;
+
+  agregarHabilidad(): void {
+    this.dialog.open(NuevaHabilidadComponent);
+  }
+
+  borrarHabilidad(id?: number) {
+    if(id != undefined){
+      this.habilidadesService.eliminarHabilidades(id).subscribe(data=>
+        {})
+    }
+  }
   
   ngOnInit(): void {
     this.habilidadesService.todosHabilidades().subscribe(data =>{

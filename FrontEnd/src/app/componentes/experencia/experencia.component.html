@@ -1,5 +1,7 @@
-<h1>Experiencia</h1>
-<button mat-mini-fab *ngIf="isLogged"><mat-icon>add</mat-icon></button>
+<div class="container">
+    <h1>Experiencia</h1>
+    <button mat-mini-fab *ngIf="isLogged" (click)="agregarExperiencia()"><mat-icon>add</mat-icon></button>
+</div>
 <p *ngIf="!experiencias?.length">¡Sin experiencia!</p>
 <div *ngFor="let experiencia of experiencias">
 <mat-card>
@@ -11,6 +13,10 @@
     <mat-card-content>
         Ingreso: {{experiencia.anoIngreso}}
     </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-icon-button *ngIf="isLogged"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button *ngIf="isLogged" (click)="borrarExperiencia()"><mat-icon>delete</mat-icon></button>
+    </mat-card-actions>
 </mat-card>
 <br>
 </div>

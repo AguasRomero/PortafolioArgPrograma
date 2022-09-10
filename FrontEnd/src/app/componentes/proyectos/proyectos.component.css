@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+  }
+h1{
+    display: inline-block;
+    flex: 1;
+}
+
+mat-mini-fab{
+    display: inline-block;
+}

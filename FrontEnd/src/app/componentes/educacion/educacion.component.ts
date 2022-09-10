@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
 import { educacion } from 'src/app/modelo/educacion.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import { NuevaEducacionComponent } from './nueva-educacion.component';
 
 @Component({
   selector: 'app-educacion',
@@ -11,9 +13,20 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class EducacionComponent implements OnInit {
   educacion: educacion[] = [];
 
-  constructor(public educacionService: EducacionService, private tokenService: TokenService) { }
+  constructor(public dialog: MatDialog, public educacionService: EducacionService, private tokenService: TokenService) { }
 
   isLogged = false;
+
+  agregarEducacion(): void {
+    this.dialog.open(NuevaEducacionComponent);
+  }
+
+  borrarEducacion(id?: number) {
+    if(id != undefined){
+      this.educacionService.eliminarEducacion(id).subscribe(data=>
+        {})
+    }
+  }
 
   ngOnInit(): void {
     this.educacionService.todosEducacion().subscribe(data =>

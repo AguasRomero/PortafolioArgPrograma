@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
 import { proyectos } from 'src/app/modelo/proyectos.model';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import { NuevoProyectoComponent } from './nuevo-proyecto.component';
 
 @Component({
   selector: 'app-proyectos',
@@ -11,9 +13,20 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class ProyectosComponent implements OnInit {
   proyectos: proyectos[] = [];
 
-  constructor(private proyectoService:ProyectosService, private tokenService: TokenService) { }
+  constructor(public dialog: MatDialog, private proyectoService:ProyectosService, private tokenService: TokenService) { }
 
   isLogged = false;
+
+  agregarProyecto(): void {
+    this.dialog.open(NuevoProyectoComponent);
+  }
+
+  borrarProyecto(id?: number) {
+    if(id != undefined){
+      this.proyectoService.eliminarProyectos(id).subscribe(data=>
+        {})
+    }
+  }
 
   ngOnInit(): void {
     this.proyectoService.todosProyectos().subscribe(data =>{

@@ -1,15 +1,27 @@
+<h2>Agregar experiencia</h2>
 <mat-form-field>
-    <h2>Agregar experiencia</h2>
     <mat-label>Empresa</mat-label>
     <input matInput type="text" class="form-control" id="empresa" [(ngModel)]="empresa" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
     <mat-label>Puesto</mat-label>
     <input matInput type="text" class="form-control" id="puesto" [(ngModel)]="puesto" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
     <mat-label>Logo de la empresa</mat-label>
     <input matInput type="text" class="form-control" id="logoEmpresa" [(ngModel)]="logoEmpresa">
+</mat-form-field>
+<br>
+<mat-form-field>
     <mat-label>Año de ingreso</mat-label>
     <input matInput type="text" class="form-control" id="anoIngreso" [(ngModel)]="anoIngreso" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
     <mat-label>Año de egreso</mat-label>
-    <input matInput type="text" class="form-control" id="anoEgreso" [(ngModel)]="anoEgreso" required="">
+    <input matInput type="text" class="form-control" id="anoEgreso" [(ngModel)]="anoEgreso">
 </mat-form-field>
 <br>
 <button mat-raised-button color="primary">Añadir</button>

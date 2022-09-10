@@ -1,5 +1,7 @@
-<h1>Educacion</h1>
-<button mat-mini-fab *ngIf="isLogged"><mat-icon>add</mat-icon></button>
+<div class="container">
+    <h1>Educacion</h1>
+    <button mat-mini-fab *ngIf="isLogged" (click)="agregarEducacion()"><mat-icon>add</mat-icon></button>
+</div>
 <p *ngIf="!educacion?.length">¡Sin estudios!</p>
 <div *ngFor="let educacion of educacion">
 <mat-card>
@@ -11,6 +13,10 @@
     <mat-card-content>
         Ingreso: {{educacion.anoIngreso}}
     </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-icon-button *ngIf="isLogged"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button *ngIf="isLogged" (click)="borrarEducacion()"><mat-icon>delete</mat-icon></button>
+    </mat-card-actions>
 </mat-card>
 <br>
 </div>
