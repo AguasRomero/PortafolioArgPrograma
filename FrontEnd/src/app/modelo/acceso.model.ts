@@ -1,11 +1,11 @@
 export class acceso{
     id?: string;
     usuario: string;
-    constrasena: string; 
+    contrasena: string; 
 
     constructor(usuario: string,
-        constrasena: string){
+        contrasena: string){
             this.usuario = usuario;
-            this.constrasena = constrasena;
+            this.contrasena = contrasena;
         }
 }

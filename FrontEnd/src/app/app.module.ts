@@ -7,6 +7,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ import { NuevoProyectoComponent } from './componentes/proyectos/nuevo-proyecto.c
     MatProgressSpinnerModule,
     MatIconModule,
     MatButtonModule,
+    MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
     HttpClientModule

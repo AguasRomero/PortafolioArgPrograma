@@ -2,6 +2,7 @@ export class habilidades {
     id?: number;
     habilidad: string;
     porcentaje: number;
+    /**true para idioma, false para lenguaje*/
     ioL: boolean;
 
     constructor(habilidad: string,

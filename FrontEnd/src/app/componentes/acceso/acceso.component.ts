@@ -32,12 +32,7 @@ export class AccesoComponent implements OnInit {
         this.isLogginFail = false;
         this.tokenService.setToken(data.token);
         this.tokenService.setUser(data.usuario);
-      }, err => {
-        this.isLogged = false;
-        this.isLogginFail = true;
-        this.error = err.error.mensaje;
-        console.log(this.error)
-      })
+      },)
   }
 
   hide = true;
