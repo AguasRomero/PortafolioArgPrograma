@@ -32,10 +32,17 @@ public class PerfilController {
         interPerfil.deletePerfil(idPerfil);
         return "Perfil borrado";
     }
-    @PutMapping ("/editar/{idPerfil}/nombre")
-    public Perfil editPerfil (@PathVariable Long idPerfil, @RequestParam ("nombre") String nuevoNombre) {
+    @PutMapping ("/editar/{idPerfil}")
+    public Perfil editPerfil (@PathVariable Long idPerfil,
+                              @RequestParam ("nombre") String nuevoNombre,
+                              @RequestParam ("fotoPerfil") String nuevoPerfil,
+                              @RequestParam ("fotoFondo") String nuevoFondo,
+                              @RequestParam ("acercaDe") String nuevoAcerca) {
         Perfil perfil = interPerfil.findPerfil(idPerfil);
         perfil.setNombre(nuevoNombre);
+        perfil.setFotoPerfil(nuevoPerfil);
+        perfil.setFotoFondo(nuevoFondo);
+        perfil.setAcercaDe(nuevoAcerca);
         interPerfil.savePerfil(perfil);
         return perfil;
     }

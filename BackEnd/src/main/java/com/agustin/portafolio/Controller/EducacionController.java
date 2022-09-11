@@ -28,4 +28,18 @@ public class EducacionController {
         else interEducacion.deleteEducacion(id);
         return "Educacion borrado";
     }
+    @PutMapping ("/edita/{id}")
+    public Educacion editEducacion (@PathVariable Long id,
+                                @RequestParam ("titulo") String nuevoTitulo,
+                                @RequestParam ("institucion") String nuevaInstitucion,
+                                @RequestParam ("anoIngreso") Short nuevoIngreso,
+                                @RequestParam ("anoEgreso") Short nuevoEgreso) {
+        Educacion educacion = interEducacion.findEducacion(id);
+        educacion.setTitulo(nuevoTitulo);
+        educacion.setInstitucion(nuevaInstitucion);
+        educacion.setAnoIngreso(nuevoIngreso);
+        educacion.setAnoEgreso(nuevoEgreso);
+        interEducacion.saveEducacion(educacion);
+        return educacion;
+    }
 }

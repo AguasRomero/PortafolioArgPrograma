@@ -23,4 +23,7 @@ export class HabilidadesService {
   public eliminarHabilidades(id: number): Observable<any>{
     return this.http.delete<any>(this.URL+`borrar/${id}`);
   }
+  public editarHabilidades(id: number, habilidad: habilidades): Observable<any> {
+    return this.http.put<any>(this.URL+`editar/${id}`, habilidad);
+  }
 }

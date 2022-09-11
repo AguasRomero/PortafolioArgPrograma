@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { proyectos } from 'src/app/modelo/proyectos.model';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import { EditarProyectosComponent } from './editar-proyectos.component';
 import { NuevoProyectoComponent } from './nuevo-proyecto.component';
 
 @Component({
@@ -24,14 +25,24 @@ export class ProyectosComponent implements OnInit {
   borrarProyecto(id?: number) {
     if(id != undefined){
       this.proyectoService.eliminarProyectos(id).subscribe(data=>
-        {})
+        {this.cargarProyectos();})
     }
   }
 
-  ngOnInit(): void {
+  editarProyecto(id?: number) {
+    if(id != undefined){
+      this.dialog.open(EditarProyectosComponent);
+    }
+  }
+
+  cargarProyectos(): void{
     this.proyectoService.todosProyectos().subscribe(data =>{
       this.proyectos=data;
     });
+  }
+
+  ngOnInit(): void {
+    this.cargarProyectos();
 
     if(this.tokenService.getToken()){
       this.isLogged = true;

@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { habilidades } from 'src/app/modelo/habilidades.model';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import { EditarHabilidadesComponent } from './editar-habilidades.component';
 import { NuevaHabilidadComponent } from './nueva-habilidad.component';
 
 @Component({
@@ -24,14 +25,25 @@ export class HabilidadesComponent implements OnInit {
   borrarHabilidad(id?: number) {
     if(id != undefined){
       this.habilidadesService.eliminarHabilidades(id).subscribe(data=>
-        {})
+        {this.cargarHabilidades();})
     }
   }
-  
-  ngOnInit(): void {
+
+  editarHabilidad(id?: number) {
+    if(id != undefined){
+      this.dialog.open(EditarHabilidadesComponent);
+    }
+  }
+
+  cargarHabilidades(): void{
     this.habilidadesService.todosHabilidades().subscribe(data =>{
       this.habilidades=data;
     });
+  }
+  
+  ngOnInit(): void {
+    this.cargarHabilidades();
+
     if(this.tokenService.getToken()){
       this.isLogged = true;
     } else {this.isLogged = false;}

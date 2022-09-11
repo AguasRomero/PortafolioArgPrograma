@@ -28,4 +28,18 @@ public class ProyectosController {
         interProyectos.deleteProyectos(id);
         return "Proyecto borrado";
     }
+    @PutMapping ("/editar/{id}")
+    public Proyectos editProyecto (@PathVariable Long id,
+                                   @RequestParam ("proyecto") String nuevoProyecto,
+                                   @RequestParam ("fotoProyecto") String nuevaFoto,
+                                   @RequestParam ("descripcion") String nuevaDescripcion,
+                                   @RequestParam ("anoCreacion") Short nuevaCreacion) {
+        Proyectos proyecto = interProyectos.findProyectos(id);
+        proyecto.setProyecto(nuevoProyecto);
+        proyecto.setFotoProyecto(nuevaFoto);
+        proyecto.setDescripcion(nuevaDescripcion);
+        proyecto.setAnoCreacion(nuevaCreacion);
+        interProyectos.saveProyectos(proyecto);
+        return proyecto;
+    }
 }
