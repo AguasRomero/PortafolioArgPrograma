@@ -1,1 +1,27 @@
 <h2>Editar experiencia</h2>
+<mat-form-field>
+    <mat-label>Empresa</mat-label>
+    <input matInput type="text" class="form-control" id="empresa" [(ngModel)]="exp.empresa" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Puesto</mat-label>
+    <input matInput type="text" class="form-control" id="puesto" [(ngModel)]="exp.puesto" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Logo de la empresa</mat-label>
+    <input matInput type="text" class="form-control" id="logoEmpresa" [(ngModel)]="exp.logoEmpresa">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Año de ingreso</mat-label>
+    <input matInput type="number" class="form-control" id="anoIngreso" [(ngModel)]="exp.anoIngreso" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Año de egreso</mat-label>
+    <input matInput type="number" class="form-control" id="anoEgreso" [(ngModel)]="exp.anoEgreso">
+</mat-form-field>
+<br>
+<button mat-raised-button color="primary" (click)="onUpdate()">Editar</button>

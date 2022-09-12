@@ -22,16 +22,16 @@ export class ExperenciaComponent implements OnInit {
     this.dialog.open(NuevaExperienciaComponent);
   }
 
-  borrarExperiencia(id?: number) {
+  borrarExperiencia(id: number) {
     if(id != undefined){
       this.experienciaService.eliminarExperiencia(id).subscribe(data=>
         {this.cargarExperiencia();})
     }
   }
 
-  editarExperiencia(id?: number) {
+  editarExperiencia(id: number) {
     if(id != undefined){
-      this.dialog.open(EditarExperienciaComponent);
+      this.dialog.open(EditarExperienciaComponent, {data: id});
     }
   }
 
