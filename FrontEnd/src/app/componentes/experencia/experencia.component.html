@@ -14,8 +14,8 @@
         Ingreso: {{experiencia.anoIngreso}}
     </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-icon-button *ngIf="isLogged"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button *ngIf="isLogged" (click)="borrarExperiencia()"><mat-icon>delete</mat-icon></button>
+        <button mat-icon-button *ngIf="isLogged" (click)="editarExperiencia(experiencia.id)"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button *ngIf="isLogged" (click)="borrarExperiencia(experiencia.id)"><mat-icon>delete</mat-icon></button>
     </mat-card-actions>
 </mat-card>
 <br>

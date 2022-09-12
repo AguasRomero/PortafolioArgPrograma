@@ -14,4 +14,7 @@ export class PerfilService {
   public getPerfil(): Observable<perfil> {
     return this.http.get<perfil>(this.URL+'obtener/1');
   }
+  public editarPerfil(perfil: perfil): Observable<any> {
+    return this.http.put<any>(this.URL+`editar/1`, perfil);
+  }
 }
