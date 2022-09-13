@@ -30,15 +30,9 @@ public class ProyectosController {
     }
     @PutMapping ("/editar/{id}")
     public Proyectos editProyecto (@PathVariable Long id,
-                                   @RequestParam ("proyecto") String nuevoProyecto,
-                                   @RequestParam ("fotoProyecto") String nuevaFoto,
-                                   @RequestParam ("descripcion") String nuevaDescripcion,
-                                   @RequestParam ("anoCreacion") Short nuevaCreacion) {
+                                   @RequestBody Proyectos nuevoProyecto) {
         Proyectos proyecto = interProyectos.findProyectos(id);
-        proyecto.setProyecto(nuevoProyecto);
-        proyecto.setFotoProyecto(nuevaFoto);
-        proyecto.setDescripcion(nuevaDescripcion);
-        proyecto.setAnoCreacion(nuevaCreacion);
+        proyecto = nuevoProyecto;
         interProyectos.saveProyectos(proyecto);
         return proyecto;
     }

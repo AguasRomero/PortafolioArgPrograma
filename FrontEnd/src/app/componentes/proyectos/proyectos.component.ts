@@ -31,7 +31,7 @@ export class ProyectosComponent implements OnInit {
 
   editarProyecto(id?: number) {
     if(id != undefined){
-      this.dialog.open(EditarProyectosComponent);
+      this.dialog.open(EditarProyectosComponent, {data: id});
     }
   }
 

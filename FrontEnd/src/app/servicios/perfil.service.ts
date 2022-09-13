@@ -14,7 +14,16 @@ export class PerfilService {
   public getPerfil(): Observable<perfil> {
     return this.http.get<perfil>(this.URL+'obtener/1');
   }
-  public editarPerfil(perfil: perfil): Observable<any> {
-    return this.http.put<any>(this.URL+`editar/1`, perfil);
+  public editarNombre(nombre: string): Observable<any> {
+    return this.http.put<any>(this.URL+`editar/nombre/1?nombre=${nombre}`, nombre);
+  }
+  public editarFotoPerfil(fotoPerfil: string): Observable<any> {
+    return this.http.put<any>(this.URL+`editar/fotoPerfil/1?nombre=${fotoPerfil}`, fotoPerfil);
+  }
+  public editarFotoFondo(fotoFondo: string): Observable<any> {
+    return this.http.put<any>(this.URL+`editar/fondo/1?fotoFondo=${fotoFondo}`, fotoFondo);
+  }
+  public editarAcercaDe(acercaDe: string): Observable<any> {
+    return this.http.put<any>(this.URL+`editar/acerca/1?acercaDe=${acercaDe}`, acercaDe);
   }
 }

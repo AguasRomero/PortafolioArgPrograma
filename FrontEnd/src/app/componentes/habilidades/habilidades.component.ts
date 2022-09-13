@@ -31,7 +31,7 @@ export class HabilidadesComponent implements OnInit {
 
   editarHabilidad(id?: number) {
     if(id != undefined){
-      this.dialog.open(EditarHabilidadesComponent);
+      this.dialog.open(EditarHabilidadesComponent, {data: id});
     }
   }
 

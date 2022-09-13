@@ -32,17 +32,35 @@ public class PerfilController {
         interPerfil.deletePerfil(idPerfil);
         return "Perfil borrado";
     }
-    @PutMapping ("/editar/{idPerfil}")
-    public Perfil editPerfil (@PathVariable Long idPerfil,
-                              @RequestParam ("nombre") String nuevoNombre,
-                              @RequestParam ("fotoPerfil") String nuevoPerfil,
-                              @RequestParam ("fotoFondo") String nuevoFondo,
-                              @RequestParam ("acercaDe") String nuevoAcerca) {
+    @PutMapping ("/editar/nombre/{idPerfil}")
+    public Perfil editNombre (@PathVariable Long idPerfil,
+                              @RequestParam ("nombre") String nuevoNombre) {
         Perfil perfil = interPerfil.findPerfil(idPerfil);
         perfil.setNombre(nuevoNombre);
-        perfil.setFotoPerfil(nuevoPerfil);
-        perfil.setFotoFondo(nuevoFondo);
+        interPerfil.savePerfil(perfil);
+        return perfil;
+    }
+    @PutMapping ("/editar/acerca/{idPerfil}")
+    public Perfil editAcerca (@PathVariable Long idPerfil,
+                              @RequestParam ("acercaDe") String nuevoAcerca) {
+        Perfil perfil = interPerfil.findPerfil(idPerfil);
         perfil.setAcercaDe(nuevoAcerca);
+        interPerfil.savePerfil(perfil);
+        return perfil;
+    }
+    @PutMapping ("/editar/foto/{idPerfil}")
+    public Perfil editFoto (@PathVariable Long idPerfil,
+                              @RequestParam ("fotoPerfil") String nuevoFotoPerfil) {
+        Perfil perfil = interPerfil.findPerfil(idPerfil);
+        perfil.setFotoPerfil(nuevoFotoPerfil);
+        interPerfil.savePerfil(perfil);
+        return perfil;
+    }
+    @PutMapping ("/editar/fondo/{idPerfil}")
+    public Perfil editFondo (@PathVariable Long idPerfil,
+                              @RequestParam ("fotoFondo") String nuevoFotoFondo) {
+        Perfil perfil = interPerfil.findPerfil(idPerfil);
+        perfil.setFotoFondo(nuevoFotoFondo);
         interPerfil.savePerfil(perfil);
         return perfil;
     }

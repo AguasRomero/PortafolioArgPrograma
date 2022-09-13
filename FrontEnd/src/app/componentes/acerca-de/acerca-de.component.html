@@ -1,9 +1,30 @@
-<div class="nombre">
+<div *ngIf="!modoEdicion" class="nombre">
     <h2>{{perfil.nombre}}</h2>
     <img class="circular" src="{{perfil.fotoPerfil}}" />
 </div>
-<div class="tarjeta">
+<div *ngIf="modoEdicion" class="nombre">
+    <mat-form-field>
+        <mat-label>Nombre completo</mat-label>
+        <input matInput type="text" class="form-control" id="nombre" [(ngModel)]="perfil.nombre" required="">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>URL de la foto de perfil</mat-label>
+        <input matInput type="text" class="form-control" id="fotoPerfil" [(ngModel)]="perfil.fotoPerfil" required="">
+    </mat-form-field>
+</div>
+
+<div *ngIf="!modoEdicion" class="tarjeta">
     <h1>Acerca de mi</h1>
     <p>{{perfil.acercaDe}}</p>
+    <button mat-icon-button *ngIf="isLogged" (click)="edicion()"><mat-icon>edit</mat-icon></button>
+</div>
+<div *ngIf="modoEdicion" class="tarjeta">
+    <h1>Acerca de mi</h1>
+    <mat-form-field>
+        <mat-label>Acerca de ti</mat-label>
+        <input matInput type="text" maxlength="256" class="form-control" class="form-control" id="acercaDe" [(ngModel)]="perfil.acercaDe" required="">
+        <mat-hint align="end">{{perfil.acercaDe.length}} / 256</mat-hint>
+    </mat-form-field>
+    <button mat-icon-button *ngIf="isLogged" (click)="edicion()"><mat-icon>edit</mat-icon></button>
 </div>
 <div class="clearfix"></div>

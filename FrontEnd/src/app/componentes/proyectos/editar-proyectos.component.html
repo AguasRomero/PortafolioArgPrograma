@@ -1,1 +1,22 @@
 <h2>Editar proyecto</h2>
+<mat-form-field>
+    <mat-label>Proyecto</mat-label>
+    <input matInput type="text" class="form-control" id="proyecto" [(ngModel)]="pro.proyecto" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Año de creacion</mat-label>
+    <input matInput type="text" class="form-control" id="anoCreacion" [(ngModel)]="pro.anoCreacion" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Foto del proyecto</mat-label>
+    <input matInput type="text" class="form-control" id="fotoProyecto" [(ngModel)]="pro.fotoProyecto">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Descripcion</mat-label>
+    <textarea  matInput type="text" maxlength="256" class="form-control" id="descripcion" [(ngModel)]="pro.descripcion"></textarea>
+    <mat-hint align="end">{{pro.descripcion.length}} / 256</mat-hint>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="onUpdate()">Editar</button>

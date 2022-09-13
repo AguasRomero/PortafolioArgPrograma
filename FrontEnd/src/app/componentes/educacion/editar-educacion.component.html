@@ -1,2 +1,27 @@
 <h2>Editar educacion</h2>
-
+<mat-form-field>
+    <mat-label>Institucion</mat-label>
+    <input matInput type="text" class="form-control" id="institucion" [(ngModel)]="edu.institucion" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Logo de la institucion</mat-label>
+    <input matInput type="text" class="form-control" id="logoInstitucion" [(ngModel)]="edu.logoInstitucion">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Titulo</mat-label>
+    <input matInput type="text" class="form-control" id="titulo" [(ngModel)]="edu.titulo" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Año de ingreso</mat-label>
+    <input matInput type="text" class="form-control" id="anoIngreso" [(ngModel)]="edu.anoIngreso" required="">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Año de egreso</mat-label>
+    <input matInput type="text" class="form-control" id="anoEgreso" [(ngModel)]="edu.anoEgreso">
+</mat-form-field>
+<br>
+<button mat-raised-button color="primary" (click)="onUpdate()">Editar</button>

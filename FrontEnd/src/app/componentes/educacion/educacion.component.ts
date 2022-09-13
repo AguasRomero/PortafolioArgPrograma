@@ -31,7 +31,7 @@ export class EducacionComponent implements OnInit {
 
   editarEducacion(id?: number) {
     if(id != undefined){
-      this.dialog.open(EditarEducacionComponent);
+      this.dialog.open(EditarEducacionComponent, {data: id});
     }
   }
 

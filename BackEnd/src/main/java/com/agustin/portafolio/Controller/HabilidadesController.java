@@ -30,13 +30,9 @@ public class HabilidadesController {
     }
     @PutMapping ("/editar/{id}")
     public Habilidades editHabilidad (@PathVariable Long id,
-                                      @RequestParam ("habilidad") String nuevaHabilidad,
-                                      @RequestParam ("porcentaje") Short nuevoPorcentaje,
-                                      @RequestParam ("ioL") Boolean nuevoIoL) {
+                                      @RequestBody Habilidades nuevaHabilidad) {
         Habilidades habilidad = interHabilidades.findHabilidades(id);
-        habilidad.setHabilidad(nuevaHabilidad);
-        habilidad.setPorcentaje(nuevoPorcentaje);
-        habilidad.setIoL(nuevoIoL);
+        habilidad = nuevaHabilidad;
         interHabilidades.saveHabilidades(habilidad);
         return habilidad;
     }
