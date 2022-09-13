@@ -14,8 +14,8 @@
         {{proyecto.descripcion}}
     </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-icon-button *ngIf="isLogged"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button *ngIf="isLogged" (click)="borrarProyecto()"><mat-icon>delete</mat-icon></button>
+        <button mat-icon-button *ngIf="isLogged" (click)="editarProyecto(proyecto.id)"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button *ngIf="isLogged" (click)="borrarProyecto(proyecto.id)"><mat-icon>delete</mat-icon></button>
     </mat-card-actions>
 </mat-card>
 <br>

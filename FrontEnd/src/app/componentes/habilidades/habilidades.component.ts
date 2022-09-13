@@ -22,14 +22,14 @@ export class HabilidadesComponent implements OnInit {
     this.dialog.open(NuevaHabilidadComponent);
   }
 
-  borrarHabilidad(id?: number) {
+  borrarHabilidad(id: number) {
     if(id != undefined){
       this.habilidadesService.eliminarHabilidades(id).subscribe(data=>
         {this.cargarHabilidades();})
     }
   }
 
-  editarHabilidad(id?: number) {
+  editarHabilidad(id: number) {
     if(id != undefined){
       this.dialog.open(EditarHabilidadesComponent, {data: id});
     }

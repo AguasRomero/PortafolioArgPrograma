@@ -27,12 +27,13 @@ export class AccesoComponent implements OnInit {
 
   onLogin(): void{
     this.acceso = new acceso(this.usuario, this.contrasena); 
-      this.autenticacionService.login(this.acceso).subscribe(data =>{
-        this.isLogged = true;
-        this.isLogginFail = false;
-        this.tokenService.setToken(data.token);
-        this.tokenService.setUser(data.usuario);
-      },)
+    this.autenticacionService.login(this.acceso).subscribe(data =>{
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.tokenService.setToken(data.token);
+      this.tokenService.setUser(data.usuario);
+    },)
+    window.location.reload()
   }
 
   hide = true;

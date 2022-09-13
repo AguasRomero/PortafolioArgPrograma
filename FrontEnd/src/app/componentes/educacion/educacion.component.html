@@ -14,8 +14,8 @@
         Ingreso: {{educacion.anoIngreso}}
     </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-icon-button *ngIf="isLogged" (click)="editarEducacion()"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button *ngIf="isLogged" (click)="borrarEducacion()"><mat-icon>delete</mat-icon></button>
+        <button mat-icon-button *ngIf="isLogged" (click)="editarEducacion(educacion.id)"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button *ngIf="isLogged" (click)="borrarEducacion(educacion.id)"><mat-icon>delete</mat-icon></button>
     </mat-card-actions>
 </mat-card>
 <br>

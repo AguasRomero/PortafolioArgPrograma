@@ -25,5 +25,6 @@ export class AcercaDeComponent implements OnInit {
   
   edicion(): void {
     this.modoEdicion != this.modoEdicion
+    this.ngOnInit();
   }
 }

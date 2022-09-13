@@ -22,14 +22,14 @@ export class ProyectosComponent implements OnInit {
     this.dialog.open(NuevoProyectoComponent);
   }
 
-  borrarProyecto(id?: number) {
+  borrarProyecto(id: number) {
     if(id != undefined){
       this.proyectoService.eliminarProyectos(id).subscribe(data=>
         {this.cargarProyectos();})
     }
   }
 
-  editarProyecto(id?: number) {
+  editarProyecto(id: number) {
     if(id != undefined){
       this.dialog.open(EditarProyectosComponent, {data: id});
     }

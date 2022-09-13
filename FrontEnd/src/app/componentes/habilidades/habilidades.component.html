@@ -9,8 +9,8 @@
             <ng-container  *ngFor="let idioma of habilidades">
                 <div *ngIf="idioma.ioL">
                     <p align = "center">{{idioma.habilidad}}</p>
-                    <button mat-icon-button *ngIf="isLogged"><mat-icon>edit</mat-icon></button>
-                    <button mat-icon-button *ngIf="isLogged" (click)="borrarHabilidad()"><mat-icon>delete</mat-icon></button>
+                    <button mat-icon-button *ngIf="isLogged" (click)="editarHabilidad(idioma.id)"><mat-icon>edit</mat-icon></button>
+                    <button mat-icon-button *ngIf="isLogged" (click)="borrarHabilidad(idioma.id)"><mat-icon>delete</mat-icon></button>
                     <mat-progress-spinner mode="determinate" value="{{idioma.porcentaje}}"></mat-progress-spinner>
                 </div>
             </ng-container>
@@ -24,8 +24,8 @@
             <ng-container  *ngFor="let lenguaje of habilidades">
                 <div *ngIf="!lenguaje.ioL">
                     <p align = "center">{{lenguaje.habilidad}}</p>
-                    <button mat-icon-button *ngIf="isLogged"><mat-icon>edit</mat-icon></button>
-                    <button mat-icon-button *ngIf="isLogged" (click)="borrarHabilidad()"><mat-icon>delete</mat-icon></button>
+                    <button mat-icon-button *ngIf="isLogged" (click)="editarHabilidad(lenguaje.id)"><mat-icon>edit</mat-icon></button>
+                    <button mat-icon-button *ngIf="isLogged" (click)="borrarHabilidad(lenguaje.id)"><mat-icon>delete</mat-icon></button>
                     <mat-progress-spinner mode="determinate" value="{{lenguaje.porcentaje}}"></mat-progress-spinner>
                 </div>
             </ng-container>

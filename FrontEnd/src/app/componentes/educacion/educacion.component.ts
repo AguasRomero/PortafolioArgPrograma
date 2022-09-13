@@ -22,14 +22,14 @@ export class EducacionComponent implements OnInit {
     this.dialog.open(NuevaEducacionComponent);
   }
 
-  borrarEducacion(id?: number) {
+  borrarEducacion(id: number) {
     if(id != undefined){
       this.educacionService.eliminarEducacion(id).subscribe(data=>
         {this.cargarEducacion();})
     }
   }
 
-  editarEducacion(id?: number) {
+  editarEducacion(id: number) {
     if(id != undefined){
       this.dialog.open(EditarEducacionComponent, {data: id});
     }
