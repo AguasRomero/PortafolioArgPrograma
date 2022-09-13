@@ -1,0 +1,9 @@
+<h2>Editar {{titulo}}</h2>
+<mat-form-field>
+    <input matInput *ngIf="opcion=1" type="text" class="form-control" id="nombre" [(ngModel)]="perfil.nombre" required="">
+    <input matInput *ngIf="opcion=3" type="text" class="form-control" id="fotoPerfil" [(ngModel)]="perfil.fotoPerfil" required="">
+    <input matInput *ngIf="opcion=4" type="text" class="form-control" id="fotoFondo" [(ngModel)]="perfil.fotoFondo" required="">
+    <input matInput *ngIf="opcion=2" type="text" maxlength="256" class="form-control" class="form-control" id="acercaDe" [(ngModel)]="perfil.acercaDe" required="">
+    <mat-hint *ngIf="opcion=2" align="end">{{perfil.acercaDe.length}} / 256</mat-hint>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="editado()">Añadir</button>
