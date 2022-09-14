@@ -1,12 +1,12 @@
 <div class="nombre">
     <h2>{{perfil.nombre}}</h2>
-    <button mat-icon-button *ngIf="isLogged" (click)="edicion(perfil.nombre, 1)"><mat-icon>edit</mat-icon></button>
+    <button mat-icon-button matTooltip="Editar el nombre" *ngIf="isLogged" (click)="edicion(perfil.nombre, 1)"><mat-icon>edit</mat-icon></button>
     <img class="circular" src="{{perfil.fotoPerfil}}" />
-    <button mat-icon-button *ngIf="isLogged" (click)="edicion(perfil.fotoPerfil, 3)"><mat-icon>edit</mat-icon></button>
+    <button mat-icon-button matTooltip="Editar la URL" *ngIf="isLogged" (click)="edicion(perfil.fotoPerfil, 3)"><mat-icon>edit</mat-icon></button>
 </div>
 <div class="tarjeta">
     <h1>Acerca de mi</h1>
     <p>{{perfil.acercaDe}}</p>
-    <button mat-icon-button *ngIf="isLogged" (click)="edicion(perfil.acercaDe, 2)"><mat-icon>edit</mat-icon></button>
+    <button mat-icon-button matTooltip="Editar la descripcion" *ngIf="isLogged" (click)="edicion(perfil.acercaDe, 2)"><mat-icon>edit</mat-icon></button>
 </div>
 <div class="clearfix"></div>

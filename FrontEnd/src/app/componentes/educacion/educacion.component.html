@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Educacion</h1>
-    <button mat-mini-fab *ngIf="isLogged" (click)="agregarEducacion()"><mat-icon>add</mat-icon></button>
+    <button mat-mini-fab matTooltip="Agregar otra educacion" *ngIf="isLogged" (click)="agregarEducacion()"><mat-icon>add</mat-icon></button>
 </div>
 <p *ngIf="!educacion?.length">¡Sin estudios!</p>
 <div *ngFor="let educacion of educacion">
@@ -14,8 +14,8 @@
         Ingreso: {{educacion.anoIngreso}}
     </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-icon-button *ngIf="isLogged" (click)="editarEducacion(educacion.id)"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button *ngIf="isLogged" (click)="borrarEducacion(educacion.id)"><mat-icon>delete</mat-icon></button>
+        <button mat-icon-button matTooltip="Editar esta educacion" *ngIf="isLogged" (click)="editarEducacion(educacion.id)"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button matTooltip="Eleminar esta educacion" *ngIf="isLogged" (click)="borrarEducacion(educacion.id)"><mat-icon>delete</mat-icon></button>
     </mat-card-actions>
 </mat-card>
 <br>

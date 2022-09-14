@@ -24,7 +24,7 @@ export class AcercaDeComponent implements OnInit {
   }
   
   edicion(elemento: string, n:number): void {
-    this.dialog.open(editarPerfil , {data: {elemento, n}})
+    this.dialog.open(editarPerfil , {minWidth: 300, data: {elemento, n}})
   }
 }
 

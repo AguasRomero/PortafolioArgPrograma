@@ -15,6 +15,16 @@
     max-width: 240px;
     max-width: 240px;
 }
+@media (max-width: 800px) {
+    .nombre {
+        width:95%;
+        text-align: center;
+    }
+    .tarjeta {
+        width:95%;
+        text-align: center;
+    }
+}
 .clearfix{
     clear:both
 }

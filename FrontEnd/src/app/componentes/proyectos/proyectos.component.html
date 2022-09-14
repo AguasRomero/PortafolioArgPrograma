@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Proyectos</h1>
-    <button mat-mini-fab *ngIf="isLogged" (click)="agregarProyecto()"><mat-icon>add</mat-icon></button>
+    <button mat-mini-fab matTooltip="Agregar otro proyecto" *ngIf="isLogged" (click)="agregarProyecto()"><mat-icon>add</mat-icon></button>
 </div>
 <p *ngIf="!proyectos?.length">¡Ningun proyecto!</p>
 <div *ngFor="let proyecto of proyectos">
@@ -14,8 +14,8 @@
         {{proyecto.descripcion}}
     </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-icon-button *ngIf="isLogged" (click)="editarProyecto(proyecto.id)"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button *ngIf="isLogged" (click)="borrarProyecto(proyecto.id)"><mat-icon>delete</mat-icon></button>
+        <button mat-icon-button matTooltip="Editar este proyecto" *ngIf="isLogged" (click)="editarProyecto(proyecto.id)"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button matTooltip="Eleminar este proyecto" *ngIf="isLogged" (click)="borrarProyecto(proyecto.id)"><mat-icon>delete</mat-icon></button>
     </mat-card-actions>
 </mat-card>
 <br>

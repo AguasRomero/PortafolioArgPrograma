@@ -11,7 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CabezalComponent } from './componentes/cabezal/cabezal.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
@@ -54,6 +56,7 @@ import { editarPerfil } from './componentes/acerca-de/acerca-de.component';
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
     NoopAnimationsModule,
     MatToolbarModule,
     MatCardModule,
@@ -65,6 +68,7 @@ import { editarPerfil } from './componentes/acerca-de/acerca-de.component';
     MatFormFieldModule,
     MatDialogModule,
     MatSlideToggleModule,
+    MatTooltipModule,
     HttpClientModule
   ],
   providers: [InterceptorProvider],

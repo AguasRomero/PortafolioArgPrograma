@@ -25,7 +25,8 @@ export class HabilidadesComponent implements OnInit {
   borrarHabilidad(id: number) {
     if(id != undefined){
       this.habilidadesService.eliminarHabilidades(id).subscribe(data=>
-        {this.cargarHabilidades();})
+        {this.cargarHabilidades();
+          this.ngOnInit();})
     }
   }
 

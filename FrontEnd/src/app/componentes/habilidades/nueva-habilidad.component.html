@@ -11,4 +11,4 @@
 <br>
 <mat-slide-toggle id="ioL" [(ngModel)]="ioL">{{ioL === true ?  'Idioma' : 'Lenguaje'}}</mat-slide-toggle>
 <br>
-<button mat-raised-button color="primary">Añadir</button>
+<button mat-raised-button color="primary" (click)="onCreate()" mat-dialog-close>Añadir</button>

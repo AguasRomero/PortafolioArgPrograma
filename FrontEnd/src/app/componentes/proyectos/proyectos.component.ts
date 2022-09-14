@@ -25,7 +25,8 @@ export class ProyectosComponent implements OnInit {
   borrarProyecto(id: number) {
     if(id != undefined){
       this.proyectoService.eliminarProyectos(id).subscribe(data=>
-        {this.cargarProyectos();})
+        {this.cargarProyectos();
+          this.ngOnInit();})
     }
   }
 

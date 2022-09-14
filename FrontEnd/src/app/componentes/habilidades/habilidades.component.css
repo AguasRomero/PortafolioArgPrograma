@@ -14,3 +14,8 @@ h1{
 mat-mini-fab{
     display: inline-block;
 }
+@media (max-width: 600px) {
+  .caja {
+    flex-direction: column;
+  }
+}

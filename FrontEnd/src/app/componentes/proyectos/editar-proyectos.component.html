@@ -19,4 +19,5 @@
     <textarea  matInput type="text" maxlength="256" class="form-control" id="descripcion" [(ngModel)]="pro.descripcion"></textarea>
     <mat-hint align="end">{{pro.descripcion.length}} / 256</mat-hint>
 </mat-form-field>
-<button mat-raised-button color="primary" (click)="onUpdate()">Editar</button>
+<br>
+<button mat-raised-button color="primary" (click)="onUpdate()" mat-dialog-close>Editar</button>

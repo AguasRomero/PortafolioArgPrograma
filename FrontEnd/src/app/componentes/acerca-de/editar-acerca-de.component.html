@@ -5,7 +5,7 @@
             <input matInput type="text" class="form-control" id="nombre" [(ngModel)]="data.elemento" required="">
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" (click)="editado(1)">Editar</button>
+        <button mat-raised-button color="primary" (click)="editado(1)" mat-dialog-close>Editar</button>
     </div>
     <div *ngSwitchCase=2>
         <h2>Editar acerca de</h2>
@@ -14,7 +14,7 @@
             <mat-hint align="end">{{data.elemento.length}} / 256</mat-hint>
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" (click)="editado(2)">Editar</button>
+        <button mat-raised-button color="primary" (click)="editado(2)" mat-dialog-close>Editar</button>
     </div>
     <div *ngSwitchCase=3>
         <h2>Editar url de la foto de perfil</h2>
@@ -22,7 +22,7 @@
             <input matInput type="url" class="form-control" id="fotoPerfil" [(ngModel)]="data.elemento">
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" (click)="editado(3)">Editar</button>
+        <button mat-raised-button color="primary" (click)="editado(3)" mat-dialog-close>Editar</button>
     </div>
     <div *ngSwitchCase=4>
         <h2>Editar url de la foto de fondo</h2>
@@ -30,6 +30,6 @@
             <input matInput type="url" class="form-control" id="fotoFondo" [(ngModel)]="data.elemento">
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" (click)="editado(4)">Editar</button>
+        <button mat-raised-button color="primary" (click)="editado(4)" mat-dialog-close>Editar</button>
     </div>
 </div>
