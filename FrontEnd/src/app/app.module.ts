@@ -30,6 +30,7 @@ import { EditarEducacionComponent } from './componentes/educacion/editar-educaci
 import { EditarExperienciaComponent } from './componentes/experencia/editar-experiencia.component';
 import { EditarHabilidadesComponent } from './componentes/habilidades/editar-habilidades.component';
 import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos.component';
+import { editarPerfil } from './componentes/acerca-de/acerca-de.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { EditarProyectosComponent } from './componentes/proyectos/editar-proyect
     EditarEducacionComponent,
     EditarExperienciaComponent,
     EditarHabilidadesComponent,
-    EditarProyectosComponent
+    EditarProyectosComponent,
+    editarPerfil
   ],
   imports: [
     BrowserModule,

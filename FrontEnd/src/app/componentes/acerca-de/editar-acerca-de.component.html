@@ -1,9 +1,35 @@
-<h2>Editar {{titulo}}</h2>
-<mat-form-field>
-    <input matInput *ngIf="opcion=1" type="text" class="form-control" id="nombre" [(ngModel)]="perfil.nombre" required="">
-    <input matInput *ngIf="opcion=3" type="text" class="form-control" id="fotoPerfil" [(ngModel)]="perfil.fotoPerfil" required="">
-    <input matInput *ngIf="opcion=4" type="text" class="form-control" id="fotoFondo" [(ngModel)]="perfil.fotoFondo" required="">
-    <input matInput *ngIf="opcion=2" type="text" maxlength="256" class="form-control" class="form-control" id="acercaDe" [(ngModel)]="perfil.acercaDe" required="">
-    <mat-hint *ngIf="opcion=2" align="end">{{perfil.acercaDe.length}} / 256</mat-hint>
-</mat-form-field>
-<button mat-raised-button color="primary" (click)="editado()">Añadir</button>
+<div [ngSwitch]="data.n">
+    <div *ngSwitchCase=1>
+        <h2>Editar nombre completo</h2>
+        <mat-form-field>
+            <input matInput type="text" class="form-control" id="nombre" [(ngModel)]="data.elemento" required="">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="editado(1)">Editar</button>
+    </div>
+    <div *ngSwitchCase=2>
+        <h2>Editar acerca de</h2>
+        <mat-form-field>
+            <textarea matInput type="text" maxlength="256" class="form-control" class="form-control" id="acercaDe" [(ngModel)]="data.elemento"></textarea>
+            <mat-hint align="end">{{data.elemento.length}} / 256</mat-hint>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="editado(2)">Editar</button>
+    </div>
+    <div *ngSwitchCase=3>
+        <h2>Editar url de la foto de perfil</h2>
+        <mat-form-field>
+            <input matInput type="url" class="form-control" id="fotoPerfil" [(ngModel)]="data.elemento">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="editado(3)">Editar</button>
+    </div>
+    <div *ngSwitchCase=4>
+        <h2>Editar url de la foto de fondo</h2>
+        <mat-form-field>
+            <input matInput type="url" class="form-control" id="fotoFondo" [(ngModel)]="data.elemento">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="editado(4)">Editar</button>
+    </div>
+</div>

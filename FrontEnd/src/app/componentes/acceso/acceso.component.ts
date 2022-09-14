@@ -33,7 +33,6 @@ export class AccesoComponent implements OnInit {
       this.tokenService.setToken(data.token);
       this.tokenService.setUser(data.usuario);
     },)
-    window.location.reload()
   }
 
   hide = true;

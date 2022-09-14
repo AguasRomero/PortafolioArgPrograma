@@ -24,7 +24,7 @@ export class AcercaDeComponent implements OnInit {
   }
   
   edicion(elemento: string, n:number): void {
-    this.dialog.open(editarNombre , {data: {Elemento: elemento, N:n}})
+    this.dialog.open(editarPerfil , {data: {elemento, n}})
   }
 }
 
@@ -32,37 +32,27 @@ export class AcercaDeComponent implements OnInit {
   selector: 'app-editar-perfil',
   templateUrl: './editar-acerca-de.component.html',
 })
-export class editarNombre {
-  constructor(public dialogRef: MatDialogRef<editarNombre>, public perfilService: PerfilService, @Inject(MAT_DIALOG_DATA) public data: any) {}
+export class editarPerfil {
+  constructor(public dialogRef: MatDialogRef<editarPerfil>, public perfilService: PerfilService, @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   elemento: string
-  titulo: string
 
   ngOnInit(): void {
-    const elemento = this.data.elemento
-    const opcion = this.data.n
-    switch(opcion){
-      case opcion===1: this.titulo="nombre"; break;
-      case opcion===2: this.titulo="acerca de"; break;
-      case opcion===3: this.titulo="foto de perfil"; break;
-      case opcion===4: this.titulo="foto de fondo"; break;
-    }
+    this.elemento = this.data.elemento
   }
 
-  editado(): void {
-    const elemento = this.data.elemento
-    const opcion = this.data.n
+  editado(opcion: number): void {
     switch(opcion){
-      case opcion===1: this.perfilService.editarNombre(this.elemento).subscribe(data=>{
+      case opcion=1: this.perfilService.editarNombre(this.data.elemento).subscribe(data=>{
         alert("Nombre editado");
       }); break;
-      case opcion===2: this.perfilService.editarAcercaDe(this.elemento).subscribe(data=>{
+      case opcion=2: this.perfilService.editarAcercaDe(this.data.elemento).subscribe(data=>{
         alert("Acerca de editado");
       }); break;
-      case opcion===3: this.perfilService.editarFotoPerfil(this.elemento).subscribe(data=>{
+      case opcion=3: this.perfilService.editarFotoPerfil(this.data.elemento).subscribe(data=>{
         alert("Foto de perfil editado");
       }); break;
-      case opcion===4: this.perfilService.editarFotoFondo(this.elemento).subscribe(data=>{
+      case opcion=4: this.perfilService.editarFotoFondo(this.data.elemento).subscribe(data=>{
         alert("Foto de fondo editado");
       }); break;
     }
