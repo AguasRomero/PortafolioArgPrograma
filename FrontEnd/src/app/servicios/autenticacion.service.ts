@@ -8,7 +8,7 @@ import { jwt } from '../modelo/jwt';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  authURL = "http://localhost:8080/auth/"
+  authURL = "https://back-arg-programa-portafolio.herokuapp.com/auth/"
   constructor(private httpClient: HttpClient) { }
 
   public login(acceso: acceso): Observable<jwt>{

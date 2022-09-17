@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/habilidades")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://argprogramaportafolio.web.app")
 public class HabilidadesController {
     @Autowired
     private IHabilidadesService interHabilidades;

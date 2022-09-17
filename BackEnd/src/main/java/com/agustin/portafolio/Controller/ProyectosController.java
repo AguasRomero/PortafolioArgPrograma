@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/proyectos")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://argprogramaportafolio.web.app")
 public class ProyectosController {
     @Autowired
     private IProyectosService interProyectos;

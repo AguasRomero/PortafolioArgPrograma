@@ -7,7 +7,7 @@ import { perfil } from '../modelo/perfil.model';
   providedIn: 'root'
 })
 export class PerfilService {
-  URL = 'http://localhost:8080/perfil/'
+  URL = 'https://back-arg-programa-portafolio.herokuapp.com/perfil/'
 
   constructor(private http:HttpClient) { }
 
