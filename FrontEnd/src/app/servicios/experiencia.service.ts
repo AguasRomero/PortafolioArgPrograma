@@ -7,7 +7,7 @@ import { experiencia } from '../modelo/experiencia.model';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  URL = 'https://back-arg-programa-portafolio.herokuapp.com/experiencia/'
+  URL = 'https://portafolioargprograma-production.up.railway.app/experiencia/'
 
   constructor(private http:HttpClient) { }
 

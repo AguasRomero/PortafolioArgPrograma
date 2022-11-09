@@ -7,7 +7,7 @@ import { habilidades } from '../modelo/habilidades.model';
   providedIn: 'root'
 })
 export class HabilidadesService {
-  URL = 'https://back-arg-programa-portafolio.herokuapp.com/habilidades/'
+  URL = 'https://portafolioargprograma-production.up.railway.app/habilidades/'
 
   constructor(private http:HttpClient) { }
 

@@ -7,7 +7,7 @@ import { proyectos } from '../modelo/proyectos.model';
   providedIn: 'root'
 })
 export class ProyectosService {
-  URL = 'https://back-arg-programa-portafolio.herokuapp.com/proyectos/'
+  URL = 'https://portafolioargprograma-production.up.railway.app/proyectos/'
 
   constructor(private http:HttpClient) { }
 
