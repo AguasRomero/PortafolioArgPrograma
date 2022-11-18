@@ -20,7 +20,8 @@ export class NuevaHabilidadComponent implements OnInit {
   onCreate(): void{
     const hab = new habilidades(this.habilidad, this.porcentaje, this.ioL)
     this.habilidadesService.agregarHabilidades(hab).subscribe(data=>{
-      alert("Habilidad agregada")
+      alert("Habilidad agregada");
+      window.location.reload()
     })
   }
 

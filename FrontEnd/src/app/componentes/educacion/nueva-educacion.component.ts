@@ -22,7 +22,8 @@ export class NuevaEducacionComponent implements OnInit {
   onCreate(): void{
     const edu = new educacion(this.institucion, this.logoInstitucion, this.titulo, this.anoIngreso, this.anoEgreso);
     this.educacionService.agregarEducacion(edu).subscribe(data=>{
-      alert("Educacion agregada")
+      alert("Educacion agregada");
+      window.location.reload()
     })
   }
 

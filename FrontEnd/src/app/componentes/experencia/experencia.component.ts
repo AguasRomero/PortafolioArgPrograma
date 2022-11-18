@@ -25,8 +25,8 @@ export class ExperenciaComponent implements OnInit {
   borrarExperiencia(id: number) {
     if(id != undefined){
       this.experienciaService.eliminarExperiencia(id).subscribe(data=>
-        {this.cargarExperiencia();
-          this.ngOnInit();})
+        {alert("Experiencia borrada");
+        window.location.reload()})
     }
   }
 

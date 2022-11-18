@@ -18,12 +18,12 @@ export class EducacionService {
     return this.http.get<educacion>(this.URL+`obtener/${id}`);
   }
   public agregarEducacion(Educacion: educacion): Observable<any> {
-    return this.http.post<any>(this.URL+'crear/', Educacion);
+    return this.http.post(this.URL+'crear/', Educacion, {responseType: 'text'});
   } 
   public eliminarEducacion(id: number): Observable<any>{
-    return this.http.delete<any>(this.URL+`borrar/${id}`);
+    return this.http.delete(this.URL+`borrar/${id}`, {responseType: 'text'});
   }
   public editarEducacion(id: number, educacion: educacion): Observable<any> {
-    return this.http.put<any>(this.URL+`editar/${id}`, educacion);
+    return this.http.put(this.URL+`editar/${id}`, educacion, {responseType: 'text'});
   }
 }

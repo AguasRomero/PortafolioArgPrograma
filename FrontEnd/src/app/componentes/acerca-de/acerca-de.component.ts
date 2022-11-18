@@ -45,15 +45,19 @@ export class editarPerfil {
     switch(opcion){
       case opcion=1: this.perfilService.editarNombre(this.data.elemento).subscribe(data=>{
         alert("Nombre editado");
+        window.location.reload()
       }); break;
       case opcion=2: this.perfilService.editarAcercaDe(this.data.elemento).subscribe(data=>{
         alert("Acerca de editado");
+        window.location.reload()
       }); break;
       case opcion=3: this.perfilService.editarFotoPerfil(this.data.elemento).subscribe(data=>{
         alert("Foto de perfil editado");
+        window.location.reload()
       }); break;
       case opcion=4: this.perfilService.editarFotoFondo(this.data.elemento).subscribe(data=>{
         alert("Foto de fondo editado");
+        window.location.reload()
       }); break;
     }
   }

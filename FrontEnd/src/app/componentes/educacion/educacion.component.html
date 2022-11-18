@@ -11,7 +11,8 @@
         <img mat-card-md-image src={{educacion.logoInstitucion}}>
     </mat-card-title-group>
     <mat-card-content>
-        Ingreso: {{educacion.anoIngreso}}
+        Ingreso: {{educacion.anoIngreso}}. 
+        Egreso: {{educacion.anoEgreso}}.
     </mat-card-content>
     <mat-card-actions align="end">
         <button mat-icon-button matTooltip="Editar esta educacion" *ngIf="isLogged" (click)="editarEducacion(educacion.id)"><mat-icon>edit</mat-icon></button>

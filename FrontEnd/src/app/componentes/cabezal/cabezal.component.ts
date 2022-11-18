@@ -17,6 +17,7 @@ export class CabezalComponent implements OnInit {
   constructor(public dialog: MatDialog, public perfilService: PerfilService, private tokenService: TokenService) { }
   abrirLogin(): void {
     this.dialog.open(AccesoComponent);
+    
   }
   ngOnInit(): void {
     this.perfilService.getPerfil().subscribe(datos => {this.perfil = datos})

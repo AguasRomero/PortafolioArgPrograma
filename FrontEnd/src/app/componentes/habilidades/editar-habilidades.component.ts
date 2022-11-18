@@ -24,6 +24,7 @@ export class EditarHabilidadesComponent implements OnInit {
     const id = this.data
     this.habilidadesService.editarHabilidades(id, this.hab).subscribe(data=>{
       alert("Habilidad editada");
+      window.location.reload()
     })
   }
 }

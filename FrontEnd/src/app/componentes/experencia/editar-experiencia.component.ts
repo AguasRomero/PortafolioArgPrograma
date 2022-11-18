@@ -24,6 +24,7 @@ export class EditarExperienciaComponent implements OnInit {
       const id = this.data
       this.experienciaService.editarExperiencia(id, this.exp).subscribe(data=>{
       alert("Experiencia editada");
+      window.location.reload()
     })
   }
 }

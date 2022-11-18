@@ -15,15 +15,15 @@ export class PerfilService {
     return this.http.get<perfil>(this.URL+'obtener/1');
   }
   public editarNombre(nombre: string): Observable<any> {
-    return this.http.put<any>(this.URL+`editar/nombre/1?nombre=${nombre}`, nombre);
+    return this.http.put(this.URL+`editar/nombre/1?nombre=${nombre}`, nombre, {responseType: 'text'});
   }
   public editarFotoPerfil(fotoPerfil: string): Observable<any> {
-    return this.http.put<any>(this.URL+`editar/fotoPerfil/1?nombre=${fotoPerfil}`, fotoPerfil);
+    return this.http.put(this.URL+`editar/fotoPerfil/1?nombre=${fotoPerfil}`, fotoPerfil, {responseType: 'text'});
   }
   public editarFotoFondo(fotoFondo: string): Observable<any> {
-    return this.http.put<any>(this.URL+`editar/fondo/1?fotoFondo=${fotoFondo}`, fotoFondo);
+    return this.http.put(this.URL+`editar/fondo/1?fotoFondo=${fotoFondo}`, fotoFondo, {responseType: 'text'});
   }
   public editarAcercaDe(acercaDe: string): Observable<any> {
-    return this.http.put<any>(this.URL+`editar/acerca/1?acercaDe=${acercaDe}`, acercaDe);
+    return this.http.put(this.URL+`editar/acerca/1?acercaDe=${acercaDe}`, acercaDe, {responseType: 'text'});
   }
 }

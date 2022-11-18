@@ -21,7 +21,8 @@ export class NuevoProyectoComponent implements OnInit {
   onCreate(): void {
     const pro = new proyectos(this.proyecto, this.descripcion, this.anoCreacion, this.fotoProyecto)
     this.proyectosService.agregarProyectos(pro).subscribe(data=>{
-      alert("Proyecto agregado")
+      alert("Proyecto agregado");
+      window.location.reload()
     })
   }
 

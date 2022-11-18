@@ -1,8 +1,11 @@
 <mat-toolbar color="primary">
       <img src = "assets/AP-logo.png" alt = "Logotipo de Argentina Programa" style="max-width: 100px;max-height: 100px;">
       <span class="espacio"></span>
-      <a href="javascript:void(0)" (click)="abrirLogin()" *ngIf="!isLogged">Acceder</a>
-      <a href="javascript:void(0)" (click)="onLogOut()" *ngIf="isLogged">Salir</a>
+      <a href="https://github.com/HorneroVago"><i class="bi bi-github"></i></a> 
+      <a href="https://www.linkedin.com/in/aguas-romero/"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto: romeroagustin54@gmail.com"><i class="bi bi-envelope"></i></a>
+      <button mat-button (click)="abrirLogin()" *ngIf="!isLogged">Acceder</button>
+      <button mat-button (click)="onLogOut()" *ngIf="isLogged">Salir</button>
 </mat-toolbar>
 
 <img class="banner" src="{{perfil.fotoFondo}}" />

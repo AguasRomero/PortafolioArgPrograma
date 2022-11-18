@@ -23,6 +23,7 @@ export class NuevaExperienciaComponent implements OnInit {
     const exp = new experiencia(this.empresa, this.logoEmpresa, this.puesto, this.anoIngreso, this.anoEgreso);
     this.experienciaService.agregarExperiencia(exp).subscribe(data=>{
       alert("Experiencia agregada");
+      window.location.reload()
     })
   }
 

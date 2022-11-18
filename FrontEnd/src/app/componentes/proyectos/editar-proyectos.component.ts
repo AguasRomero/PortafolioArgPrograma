@@ -23,7 +23,8 @@ export class EditarProyectosComponent implements OnInit {
   onUpdate(): void {
     const id = this.data
     this.proyectoService.editarProyectos(id, this.pro).subscribe(data=>{
-      alert("Proyecto editado")
+      alert("Proyecto editado");
+      window.location.reload()
     })
   }
 }

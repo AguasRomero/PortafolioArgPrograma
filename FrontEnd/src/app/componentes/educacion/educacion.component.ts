@@ -25,8 +25,8 @@ export class EducacionComponent implements OnInit {
   borrarEducacion(id: number) {
     if(id != undefined){
       this.educacionService.eliminarEducacion(id).subscribe(data=>
-        {this.cargarEducacion();
-          this.ngOnInit();})
+        {alert("Educacion borrada");
+        window.location.reload()})
     }
   }
 

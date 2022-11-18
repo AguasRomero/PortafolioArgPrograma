@@ -18,12 +18,12 @@ export class ExperienciaService {
     return this.http.get<experiencia>(this.URL+`obtener/${id}`);
   }
   public agregarExperiencia(experiencia: experiencia): Observable<any> {
-    return this.http.post<any>(this.URL+'crear/', experiencia);
+    return this.http.post(this.URL+'crear/', experiencia, {responseType: 'text'});
   } 
   public eliminarExperiencia(id: number): Observable<any>{
-    return this.http.delete<any>(this.URL+`borrar/${id}`);
+    return this.http.delete(this.URL+`borrar/${id}`, {responseType: 'text'});
   }
   public editarExperiencia(id: number, experiencia: experiencia): Observable<any> {
-    return this.http.put<any>(this.URL+`editar/${id}`, experiencia);
+    return this.http.put(this.URL+`editar/${id}`, experiencia, {responseType: 'text'});
   }
 }

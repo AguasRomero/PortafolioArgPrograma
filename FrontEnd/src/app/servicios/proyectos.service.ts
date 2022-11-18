@@ -18,12 +18,12 @@ export class ProyectosService {
     return this.http.get<proyectos>(this.URL+`obtener/${id}`);
   }
   public agregarProyectos(Proyectos: proyectos): Observable<any> {
-    return this.http.post<any>(this.URL+'crear/', Proyectos);
+    return this.http.post(this.URL+'crear/', Proyectos, {responseType: 'text'});
   } 
   public eliminarProyectos(id: number): Observable<any>{
-    return this.http.delete<any>(this.URL+`borrar/${id}`);
+    return this.http.delete(this.URL+`borrar/${id}`, {responseType: 'text'});
   }
   public editarProyectos(id: number, proyecto: proyectos): Observable<any> {
-    return this.http.put<any>(this.URL+`editar/${id}`, proyecto);
+    return this.http.put(this.URL+`editar/${id}`, proyecto, {responseType: 'text'});
   }
 }

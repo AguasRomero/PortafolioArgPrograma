@@ -30,9 +30,15 @@ export class AccesoComponent implements OnInit {
     this.autenticacionService.login(this.acceso).subscribe(data =>{
       this.isLogged = true;
       this.isLogginFail = false;
-      this.tokenService.setToken(data.token);
+      this.tokenService.setToken(data.accessToken);
       this.tokenService.setUser(data.usuario);
-    },)
+      window.location.reload();
+    }, err=> {
+      this.isLogged = false;
+      this.isLogginFail = true;
+      this.error = err.error;
+      console.log(this.error)
+    });
   }
 
   hide = true;

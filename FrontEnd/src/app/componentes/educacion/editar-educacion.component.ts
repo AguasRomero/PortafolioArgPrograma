@@ -24,6 +24,7 @@ export class EditarEducacionComponent implements OnInit {
     const id = this.data
     this.educacionService.editarEducacion(id, this.edu).subscribe(data=>{
       alert("Educacion editada");
+      window.location.reload()
     })
   }
 }

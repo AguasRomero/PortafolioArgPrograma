@@ -18,12 +18,12 @@ export class HabilidadesService {
     return this.http.get<habilidades>(this.URL+`obtener/${id}`);
   }
   public agregarHabilidades(Habilidades: habilidades): Observable<any> {
-    return this.http.post<any>(this.URL+'crear/', Habilidades);
+    return this.http.post(this.URL+'crear/', Habilidades, {responseType: 'text'});
   } 
   public eliminarHabilidades(id: number): Observable<any>{
-    return this.http.delete<any>(this.URL+`borrar/${id}`);
+    return this.http.delete(this.URL+`borrar/${id}`, {responseType: 'text'});
   }
   public editarHabilidades(id: number, habilidad: habilidades): Observable<any> {
-    return this.http.put<any>(this.URL+`editar/${id}`, habilidad);
+    return this.http.put(this.URL+`editar/${id}`, habilidad, {responseType: 'text'});
   }
 }
