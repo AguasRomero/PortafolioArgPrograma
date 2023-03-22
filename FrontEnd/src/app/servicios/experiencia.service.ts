@@ -7,7 +7,7 @@ import { experiencia } from '../modelo/experiencia.model';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  URL = 'https://portafolioargprograma-production.up.railway.app/experiencia/'
+  URL = 'https://zestful-rodina-hornerovago.koyeb.app/experiencia/'
 
   constructor(private http:HttpClient) { }
 

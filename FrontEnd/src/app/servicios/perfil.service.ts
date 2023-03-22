@@ -7,7 +7,7 @@ import { perfil } from '../modelo/perfil.model';
   providedIn: 'root'
 })
 export class PerfilService {
-  URL = 'https://portafolioargprograma-production.up.railway.app/perfil/'
+  URL = 'https://zestful-rodina-hornerovago.koyeb.app/perfil/'
 
   constructor(private http:HttpClient) { }
 

@@ -8,7 +8,7 @@ import { jwt } from '../modelo/jwt';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  authURL = "https://portafolioargprograma-production.up.railway.app/auth/"
+  authURL = "https://zestful-rodina-hornerovago.koyeb.app/auth/"
   constructor(private httpClient: HttpClient) { }
 
   public login(acceso: acceso): Observable<jwt>{

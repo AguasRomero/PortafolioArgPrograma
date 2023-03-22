@@ -7,7 +7,7 @@ import { proyectos } from '../modelo/proyectos.model';
   providedIn: 'root'
 })
 export class ProyectosService {
-  URL = 'https://portafolioargprograma-production.up.railway.app/proyectos/'
+  URL = 'https://zestful-rodina-hornerovago.koyeb.app/proyectos/'
 
   constructor(private http:HttpClient) { }
 

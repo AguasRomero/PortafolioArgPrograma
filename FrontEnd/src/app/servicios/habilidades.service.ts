@@ -7,7 +7,7 @@ import { habilidades } from '../modelo/habilidades.model';
   providedIn: 'root'
 })
 export class HabilidadesService {
-  URL = 'https://portafolioargprograma-production.up.railway.app/habilidades/'
+  URL = 'https://zestful-rodina-hornerovago.koyeb.app/habilidades/'
 
   constructor(private http:HttpClient) { }
 

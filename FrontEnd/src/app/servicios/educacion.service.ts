@@ -7,7 +7,7 @@ import { educacion } from '../modelo/educacion.model';
   providedIn: 'root'
 })
 export class EducacionService {
-  URL = 'https://portafolioargprograma-production.up.railway.app/educacion/'
+  URL = 'https://zestful-rodina-hornerovago.koyeb.app/educacion/'
 
   constructor(private http:HttpClient) { }
 
