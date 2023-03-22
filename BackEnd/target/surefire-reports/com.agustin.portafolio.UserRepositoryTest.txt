@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.agustin.portafolio.UserRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 37.858 s <<< FAILURE! - in com.agustin.portafolio.UserRepositoryTest
+testCrearUsuario  Time elapsed: 1.677 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [UK_nq2l2uvypwtxqn62p0772roqv]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.agustin.portafolio.UserRepositoryTest.testCrearUsuario(UserRepositoryTest.java:27)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.agustin.portafolio.UserRepositoryTest.testCrearUsuario(UserRepositoryTest.java:27)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'agustin' for key 'UK_nq2l2uvypwtxqn62p0772roqv'
+	at com.agustin.portafolio.UserRepositoryTest.testCrearUsuario(UserRepositoryTest.java:27)
+
